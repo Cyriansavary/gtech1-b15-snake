@@ -13,7 +13,7 @@ $(EXE): $(CPP) $(HPP)
 
 # Run of the (always up-to-date) executable:
 run: $(EXE)
-	./$(EXE)
+	  ./$(EXE)
 
 # Build the UML diagram as a PNG image:
 uml/classes.png: $(HPP)
