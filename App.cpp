@@ -93,12 +93,16 @@ int App::run(){
 		optionmenu();
 		break;
     }
+     SDL_RenderPresent(renderer);
+       SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+  SDL_RenderClear(renderer);
     frameTime = SDL_GetTicks() - frameStart;
     if (frameTime < frameDelay) {
       SDL_Delay(frameDelay - frameTime);
     }
 
   }
+ 
   // Destruction du renderer et de la fenêtre :
   SDL_DestroyRenderer(renderer);
   SDL_DestroyWindow(window);
@@ -141,10 +145,10 @@ void App::render() {
   SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255); //Couleur blanche
   SDL_RenderFillRect(renderer, & fruit->fruit);
   //SDL_Delay(1);
-  SDL_RenderPresent(renderer);
+  
   //SDL_Delay(5);
-  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-  SDL_RenderClear(renderer);
+  //SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+  //SDL_RenderClear(renderer);
 }
 
 bool App::check_collision(SDL_Rect & A, SDL_Rect & B) {
@@ -260,20 +264,20 @@ void App::menu() {
   maketext(leave, leavetext, sizeof(leave) / sizeof(leave[0]), SizeText, HeightText3, WidthText);
   maketext(arrow, arrowtext, sizeof(arrow) / sizeof(arrow[0]), SizeText, posarrow[head->movearrow], WidthArrow);
   indexmenu = head->update(pos[0]);
-  SDL_RenderPresent(renderer);
+  //SDL_RenderPresent(renderer);
   //SDL_Delay(5);
-  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-  SDL_RenderClear(renderer);
+  //SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+  //SDL_RenderClear(renderer);
 }
 
 void App::endgame(void) {
   SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
   maketext(gamels, gamelstext, sizeof(gamels) / sizeof(gamels[0]), SizeTextTitle, HeightTextTitle * 2, WidthTextTitle);
   maketext(over, overtext, sizeof(over) / sizeof(over[0]), SizeTextTitle, HeightTextTitle * 4, WidthTextTitle);
-  SDL_RenderPresent(renderer);
+  //SDL_RenderPresent(renderer);
   //SDL_Delay(5);
-  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-  SDL_RenderClear(renderer);
+  //SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+  //SDL_RenderClear(renderer);
 }
 void App::optionmenu(void) {
 	  SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
@@ -283,10 +287,10 @@ void App::optionmenu(void) {
   maketext(leave, leavetext, sizeof(leave) / sizeof(leave[0]), SizeText, HeightText3, WidthText);
   maketext(arrow, arrowtext, sizeof(arrow) / sizeof(arrow[0]), SizeText, posarrow[head->movearrow], WidthArrow);
  // indexmenu = head->update(pos[0]);
-  SDL_RenderPresent(renderer);
+  //SDL_RenderPresent(renderer);
   //SDL_Delay(5);
-  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-  SDL_RenderClear(renderer);
+ // SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+  //SDL_RenderClear(renderer);
 }
 
 void App::scoreboard(int digit1, int digit2, int digit3, int row, int size, int height, int width){
