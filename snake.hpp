@@ -15,7 +15,7 @@ extern int indexmenu;
 
 class Head {
   public:
-    char move;
+  char move;
   char lastmove;
   int movearrow;
 
@@ -85,30 +85,31 @@ class Head {
     switch (move) {
     case 'U':
       pos.posY--;
-      if (pos.posY <= 0) {
+      if (pos.posY < 0) {
         indexmenu = 2;
-        pos.posY = 0;
+        
       }
+      
       break;
     case 'D':
       pos.posY++;
-      if (pos.posY >= (SCREEN_HEIGHT - SNAKE)) {
+      if (pos.posY >(SCREEN_HEIGHT - SNAKE)) {
         indexmenu = 2;
-        pos.posY = (SCREEN_HEIGHT - SNAKE);
+        
       }
       break;
     case 'L':
       pos.posX--;
-      if (pos.posX <= 0) {
+      if (pos.posX < 0) {
         indexmenu = 2;
-        pos.posX = 0;
+        
       }
       break;
     case 'R':
       pos.posX++;
-      if (pos.posX >= (SCREEN_WIDTH - SNAKE)) {
+      if (pos.posX > (SCREEN_WIDTH - SNAKE)) {
         indexmenu = 2;
-        pos.posX = (SCREEN_WIDTH - SNAKE);
+        
       }
       break;
     }
@@ -117,3 +118,6 @@ class Head {
 };
 
 #endif // SNAKE_SNAKE_H
+
+
+

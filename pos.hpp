@@ -10,7 +10,7 @@
 
 class Pos {
   public:
-    int posY;
+  int posY;
   int posX;
   SDL_Rect rect;
 

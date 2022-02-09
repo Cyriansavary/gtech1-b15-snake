@@ -6,6 +6,33 @@
 
 /' Objects '/
 
+class App {
+	+App()
+	+~App()
+	+fruit : Fruit*
+	+head : Head*
+	+check_collision(SDL_Rect& A, SDL_Rect& B) : bool
+	+init() : int
+	+makefruitrand() : int
+	+run() : int
+	+pos : vector<Pos>
+	+arrowtext : vector<Text>
+	+gamelstext : vector<Text>
+	+leavetext : vector<Text>
+	+optiontext : vector<Text>
+	+overtext : vector<Text>
+	+snaketext : vector<Text>
+	+starttext : vector<Text>
+	+endgame() : void
+	+game() : void
+	+maketext(int alltext, std::vector<Text> sentence, int row, int size, int height, int width) : void
+	+menu() : void
+	+optionmenu() : void
+	+render() : void
+	+scoreboard(int digit1, int digit2, int digit3, int row, int size, int height, int width) : void
+}
+
+
 class Fruit {
 	+Fruit(int fruitX, int fruitY)
 	+fruit : SDL_Rect
@@ -19,8 +46,9 @@ class Head {
 	+Head(int posX, int posY, int score)
 	+lastmove : char
 	+move : char
+	+movearrow : int
+	+update(Pos& pos) : int
 	+moving(Pos& pos) : void
-	+update(Pos& pos) : void
 }
 
 
@@ -48,6 +76,18 @@ class Text {
 
 
 /' Aggregation relationships '/
+
+.App o-- .Fruit
+
+
+.App o-- .Head
+
+
+.App *-- .Pos
+
+
+.App "7" *-- .Text
+
 
 
 

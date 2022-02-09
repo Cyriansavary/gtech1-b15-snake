@@ -1,8 +1,8 @@
 CC=g++
 # Adapt the variables below to your needs:
 EXE=snake
-CPP=snake.cpp 
-HPP=snake.hpp text.hpp pos.hpp fruit.hpp
+CPP=snake.cpp App.cpp
+HPP=snake.hpp text.hpp pos.hpp fruit.hpp sentence.hpp App.hpp
 
 # The default is build the executable file:
 default: $(EXE)
